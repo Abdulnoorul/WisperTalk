@@ -1,0 +1,237 @@
+/* ------------------------------
+   Full CSS: Desktop + Responsive
+   ------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ---------- Desktop / Base ---------- */
+#successContainer {
+    width: 100vw;
+    height: 100vh;
+    /* use min-height so content can grow */
+    background-color: #0A2720;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    overflow-x: hidden;
+}
+
+#smainLogo {
+    width: 330px;
+    height: auto;
+    max-height: 200px;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* fluid but keep the original look */
+#stagLine {
+    font-family: "Great Vibes", cursive;
+    font-style: normal;
+    color: white;
+    font-size: clamp(28px, 4vw, 50px);
+    /* fluid scaling */
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 6px 0;
+}
+
+/* ======= FIXED ICON (in-flow, responsive) ======= */
+#sicon {
+    display: block;
+    /* keep in document flow */
+    margin: -18px auto 0;
+    /* slight overlap — tweak if you want no overlap */
+    width: clamp(40px, 6.5vw, 60px);
+    /* scales between 40px and 60px */
+    aspect-ratio: 1 / 1;
+    /* height follows width */
+    height: auto;
+    border-radius: 50%;
+    background-color: #0A2720;
+    /* keep or remove if you place an image inside */
+    flex-shrink: 0;
+    transition: width .18s ease, margin .18s ease, transform .18s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* if sicon contains an img */
+#sicon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* ---------- Form Card ---------- */
+#secForm {
+    position: relative;
+    padding: 12px;
+    width: 420px;
+    max-width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    font-family: "Lora", serif;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.01);
+    height: auto;
+    /* allow height to grow */
+    min-height: 150px;
+    border-radius: 25px;
+    row-gap: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+#enhead {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#secText {
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: "Lora", serif;
+    font-weight: 900;
+    padding: 6px 12px;
+}
+
+#homeL {
+    text-decoration: none;
+    color: white;
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* small utility to avoid overflow on tiny screens */
+@media (max-width: 420px) {
+    #secText {
+        width: 80%;
+    }
+}
+
+/* ========== Tablet: up to 768px ========== */
+@media (max-width: 768px) {
+    #successContainer {
+        min-height: auto;
+        padding: 36px 18px;
+        row-gap: 16px;
+    }
+
+    #smainLogo {
+        width: 260px;
+        max-height: 180px;
+    }
+
+    #stagLine {
+        font-size: clamp(26px, 6.5vw, 36px);
+        letter-spacing: 1px;
+        margin-top: 4px;
+        padding: 0 8px;
+    }
+
+    #sicon {
+        margin: -14px auto 0;
+        /* less overlap */
+        width: clamp(38px, 7.0vw, 50px);
+    }
+
+    #secForm {
+        width: 360px;
+        max-width: 92%;
+        padding: 10px;
+        row-gap: 12px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+
+    #enhead {
+        font-size: 18px;
+    }
+
+    #secText {
+        width: 220px;
+        max-width: 85%;
+        height: 48px;
+        font-size: 17px;
+    }
+
+    #homeL {
+        font-size: 28px;
+        padding: 4px;
+    }
+}
+
+/* ========== Mobile: up to 480px ========== */
+@media (max-width: 480px) {
+    #successContainer {
+        padding: 28px 14px;
+        row-gap: 12px;
+        align-items: center;
+    }
+
+    #smainLogo {
+        width: 200px;
+        max-height: 140px;
+    }
+
+    #stagLine {
+        font-size: clamp(20px, 7.5vw, 28px);
+        letter-spacing: 0.5px;
+        text-align: center;
+        padding: 0 6px;
+        line-height: 1.05;
+    }
+
+    #sicon {
+        margin: -10px auto 0;
+        width: clamp(34px, 9.0vw, 44px);
+    }
+
+    #secForm {
+        width: 90%;
+        max-width: 320px;
+        padding: 12px;
+        row-gap: 10px;
+        border-radius: 18px;
+        font-size: 15px;
+    }
+
+    #enhead {
+        font-size: 17px;
+    }
+
+    #secText {
+        width: 80%;
+        max-width: 260px;
+        height: 44px;
+        font-size: 15px;
+    }
+
+    #homeL {
+        font-size: 22px;
+        padding: 3px;
+    }
+}
