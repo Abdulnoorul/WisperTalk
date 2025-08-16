@@ -8,6 +8,51 @@
     overflow: hidden;
 }
 
+/* ========== Large Screens / Televisions ========== */
+@media (min-width: 1440px) {
+    #successContainer {
+        padding: 50px;
+        row-gap: 40px;
+    }
+
+    #smainLogo {
+        width: 480px;
+        max-height: 260px;
+    }
+
+    #stagLine {
+        font-size: clamp(40px, 5vw, 80px);
+        letter-spacing: 3px;
+    }
+
+    #sicon {
+        width: clamp(60px, 5vw, 100px);
+        margin-top: -20px;
+    }
+
+    #secForm {
+        width: 600px;
+        padding: 20px;
+        font-size: 20px;
+        row-gap: 20px;
+    }
+
+    #enhead {
+        font-size: 26px;
+    }
+
+    #secText {
+        width: 400px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    #homeL {
+        font-size: 40px;
+        padding: 10px;
+    }
+}
+
 /* ---------- Desktop / Base ---------- */
 #successContainer {
     width: 100vw;
