@@ -29,7 +29,7 @@ function Secret() {
       else {
           axios
             .post(
-              `http://localhost:8080/encryptMsg?msg=${message}&password=${epassword}`
+              `http://wispertalk-springboot-production.up.railway.app/encryptMsg?msg=${message}&password=${epassword}`
             )
             .then((response) => {
               const secretmssg = response.data;
@@ -48,7 +48,7 @@ function Secret() {
     const decryptMessage = () => {
       axios
         .post(
-          `http://localhost:8080/decryptMsg?secret=${encodeURIComponent(
+          `http://wispertalk-springboot-production.up.railway.app/decryptMsg?secret=${encodeURIComponent(
             secDecryMessage
           )}&password=${encodeURIComponent(decryptPassword)}`
         )
